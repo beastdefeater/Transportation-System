@@ -1,26 +1,32 @@
 public class Driver {
 
-    private String driverId;
-    private String name;
+    private String id;
+    private String driverName;
+    private Vehicle currentVehicle;
 
-    // Object Reference
-    private Vehicle assignedVehicle;
-
-    public Driver(String driverId, String name) {
-        this.driverId = driverId;
-        this.name = name;
+    public Driver(String id, String driverName) {
+        this.id = id;
+        this.driverName = driverName;
     }
 
-    public void assignVehicle(Vehicle vehicle) {
-        assignedVehicle = vehicle;
+    public void setVehicle(Vehicle vehicle) {
+        currentVehicle = vehicle;
     }
 
-    public void displayDriver() {
+    public String getDriverName() {
+        return driverName;
+    }
 
-        System.out.println("Driver : " + name);
+    public void showDriver() {
+        System.out.println("\nDriver Details");
+        System.out.println("----------------------");
+        System.out.println("ID : " + id);
+        System.out.println("Name : " + driverName);
 
-        if (assignedVehicle != null) {
-            System.out.println("Vehicle : " + assignedVehicle.getModel());
+        if (currentVehicle != null) {
+            System.out.println("Assigned Vehicle : " + currentVehicle.getVehicleName());
+        } else {
+            System.out.println("Assigned Vehicle : None");
         }
     }
 }

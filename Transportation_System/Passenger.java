@@ -1,14 +1,21 @@
 public class Passenger {
 
-    private String passengerId;
-    private String name;
+    private String id;
+    private String passengerName;
 
-    public Passenger(String passengerId, String name) {
-        this.passengerId = passengerId;
-        this.name = name;
+    public Passenger(String id, String passengerName) {
+        this.id = id;
+        this.passengerName = passengerName;
     }
 
-    public String getName() {
-        return name;
+    public String getPassengerName() {
+        return passengerName;
+    }
+
+    public void showPassenger() {
+        System.out.println("\nPassenger Details");
+        System.out.println("----------------------");
+        System.out.println("Passenger ID : " + id);
+        System.out.println("Name : " + passengerName);
     }
 }

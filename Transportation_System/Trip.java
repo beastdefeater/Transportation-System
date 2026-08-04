@@ -6,32 +6,35 @@ public class Trip {
     private Route route;
 
     public Trip(Passenger passenger, Driver driver, Vehicle vehicle, Route route) {
-
         this.passenger = passenger;
         this.driver = driver;
         this.vehicle = vehicle;
         this.route = route;
     }
 
-    public void startTrip() {
+    public void displayTripDetails() {
 
-        System.out.println("Trip Started");
+        System.out.println("\n========== TRIP DETAILS ==========");
 
-        route.displayRoute();
+        passenger.showPassenger();
+        driver.showDriver();
+        vehicle.vehicleInfo();
+        route.showRoute();
 
-        vehicle.start();
+        double amount = vehicle.calculateCost(route.getDistance());
 
-        double fare = vehicle.calculateFare(route.getDistance());
-
-        System.out.println("Passenger : " + passenger.getName());
-
-        System.out.println("Fare : " + fare);
+        System.out.println("\nTrip Cost : ₹" + amount);
     }
 
-    public void endTrip() {
+    public void beginJourney() {
 
-        vehicle.stop();
+        System.out.println("\nJourney Started Successfully...");
+        vehicle.engineOn();
+    }
 
-        System.out.println("Trip Ended");
+    public void finishJourney() {
+
+        vehicle.engineOff();
+        System.out.println("Journey Completed.");
     }
 }

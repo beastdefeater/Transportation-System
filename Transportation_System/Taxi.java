@@ -1,11 +1,11 @@
 public class Taxi extends Vehicle {
 
-    public Taxi(String id, String model, int capacity) {
-        super(id, model, capacity);
+    public Taxi(String regNo, String vehicleName, int seatCount) {
+        super(regNo, vehicleName, seatCount);
     }
 
     @Override
-    public double calculateFare(double distance) {
-        return 50 + (distance * 15);
+    public double calculateCost(double distance) {
+        return 60 + (distance * 14);
     }
 }

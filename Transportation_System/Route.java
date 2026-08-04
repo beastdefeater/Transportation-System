@@ -1,20 +1,24 @@
 public class Route {
 
-    private String source;
-    private String destination;
-    private double distance;
+    private String startLocation;
+    private String endLocation;
+    private double totalDistance;
 
-    public Route(String source, String destination, double distance) {
-        this.source = source;
-        this.destination = destination;
-        this.distance = distance;
+    public Route(String startLocation, String endLocation, double totalDistance) {
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
+        this.totalDistance = totalDistance;
     }
 
     public double getDistance() {
-        return distance;
+        return totalDistance;
     }
 
-    public void displayRoute() {
-        System.out.println(source + " -> " + destination);
+    public void showRoute() {
+        System.out.println("\nRoute Information");
+        System.out.println("----------------------");
+        System.out.println("From : " + startLocation);
+        System.out.println("To   : " + endLocation);
+        System.out.println("Distance : " + totalDistance + " km");
     }
 }

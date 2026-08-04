@@ -1,11 +1,11 @@
 public class Bus extends Vehicle {
 
-    public Bus(String id, String model, int capacity) {
-        super(id, model, capacity);
+    public Bus(String regNo, String vehicleName, int seatCount) {
+        super(regNo, vehicleName, seatCount);
     }
 
     @Override
-    public double calculateFare(double distance) {
-        return 20; // Fixed fare
+    public double calculateCost(double distance) {
+        return distance * 4;
     }
 }

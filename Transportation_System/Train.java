@@ -1,11 +1,11 @@
 public class Train extends Vehicle {
 
-    public Train(String id, String model, int capacity) {
-        super(id, model, capacity);
+    public Train(String regNo, String vehicleName, int seatCount) {
+        super(regNo, vehicleName, seatCount);
     }
 
     @Override
-    public double calculateFare(double distance) {
-        return distance * 5;
+    public double calculateCost(double distance) {
+        return 25 + (distance * 3);
     }
 }

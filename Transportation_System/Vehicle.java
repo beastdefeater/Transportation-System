@@ -1,42 +1,34 @@
 public abstract class Vehicle {
 
-    private String vehicleId;
-    private String model;
-    private int capacity;
+    protected String regNo;
+    protected String vehicleName;
+    protected int seatCount;
 
-    public Vehicle(String vehicleId, String model, int capacity) {
-        this.vehicleId = vehicleId;
-        this.model = model;
-        this.capacity = capacity;
+    public Vehicle(String regNo, String vehicleName, int seatCount) {
+        this.regNo = regNo;
+        this.vehicleName = vehicleName;
+        this.seatCount = seatCount;
     }
 
-    // Getters
-    public String getVehicleId() {
-        return vehicleId;
+    public String getVehicleName() {
+        return vehicleName;
     }
 
-    public String getModel() {
-        return model;
+    public void engineOn() {
+        System.out.println(vehicleName + " engine started.");
     }
 
-    public int getCapacity() {
-        return capacity;
+    public void engineOff() {
+        System.out.println(vehicleName + " engine stopped.");
     }
 
-    public void start() {
-        System.out.println(model + " started.");
+    public void vehicleInfo() {
+        System.out.println("\nVehicle Details");
+        System.out.println("----------------------");
+        System.out.println("Registration : " + regNo);
+        System.out.println("Model        : " + vehicleName);
+        System.out.println("Seats        : " + seatCount);
     }
 
-    public void stop() {
-        System.out.println(model + " stopped.");
-    }
-
-    // Abstract method (Abstraction)
-    public abstract double calculateFare(double distance);
-
-    public void displayInfo() {
-        System.out.println("Vehicle ID : " + vehicleId);
-        System.out.println("Model      : " + model);
-        System.out.println("Capacity   : " + capacity);
-    }
+    public abstract double calculateCost(double distance);
 }
